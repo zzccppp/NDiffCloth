@@ -18,11 +18,19 @@ target("NDiffCloth")
 target("ndf")
     add_packages("eigen", "pybind11", "openmp")
     set_kind("shared")
-    add_files("src/py-bindings/**.cpp")
+    add_files("src/**.cpp")
+    add_includedirs("src")
     set_filename("ndf.so")
     if is_plat("windows") then
         set_extension(".pyd")
     end
+
+    after_build(
+        function (target) 
+            local targetfile = target:targetfile()
+            os.cp(targetfile, os.projectdir() .. "/python/")
+        end
+    )
 --
 -- If you want to known more usage about xmake, please see https://xmake.io
 --

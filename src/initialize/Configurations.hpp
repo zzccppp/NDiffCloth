@@ -46,6 +46,7 @@ struct SceneConfiguration {
     double backwardConvergenceThresh;
     std::string name;
 
+  public:
     static SceneConfiguration load_json_string(const std::string &buf);
 
     std::string dump_json_string() const;
