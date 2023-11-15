@@ -3,6 +3,7 @@
 #define NDIFFCLOTH_TYPEDEFS_HEADER
 
 #include <Eigen/Core>
+#include <utility>
 
 typedef unsigned int Index;
 typedef Eigen::VectorXd VecXd;
@@ -42,18 +43,15 @@ typedef Eigen::Matrix<double, 6, 9> Mat6x9d;
 typedef Eigen::Matrix<double, 9, 9> Mat9x9d;
 
 struct AABB { // axis-aligned bounding box
-    Vec3d min;
-    Vec3d max;
+  Vec3d min;
+  Vec3d max;
 
-    AABB()
-    {
-        min.setZero();
-        max.setZero();
-    }
+  AABB() {
+    min.setZero();
+    max.setZero();
+  }
 
-    AABB(Vec3d min, Vec3d max)
-        : min(min)
-        , max(max) {};
+  AABB(Vec3d min, Vec3d max) : min(std::move(min)), max(std::move(max)){};
 };
 
 #endif
