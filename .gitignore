@@ -5,3 +5,7 @@ build
 cmake-build-debug
 CMakeLists.txt
 python/ndf.so
+
+docs/_build
+docs/_doxygen
+docs/api
