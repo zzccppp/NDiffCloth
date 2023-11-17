@@ -20,6 +20,8 @@ typedef Eigen::Matrix<double, 9, 1> Vec9d;
 typedef Eigen::Matrix<double, 12, 1> Vec12d;
 typedef Eigen::Matrix<double, 12, 12> Mat12x12d;
 
+typedef Eigen::MatrixXd MatXd;
+typedef Eigen::MatrixXi MatXi;
 typedef Eigen::Matrix<int, 2, 2> Mat2x2i;
 typedef Eigen::Matrix<double, 1, 1> Mat1x1d;
 typedef Eigen::Matrix<double, 2, 2> Mat2x2d;
@@ -41,6 +43,11 @@ typedef Eigen::Matrix<double, 6, 4> Mat6x4d;
 typedef Eigen::Matrix<double, 6, 6> Mat6x6d;
 typedef Eigen::Matrix<double, 6, 9> Mat6x9d;
 typedef Eigen::Matrix<double, 9, 9> Mat9x9d;
+
+typedef Eigen::SparseMatrix<double> SpMat;
+typedef Eigen::Triplet<double> Triplet;
+typedef std::vector<Eigen::Triplet<double>> TripleVector;
+typedef Eigen::Transform<double, 3, Eigen::Affine> Rotation;
 
 struct AABB {   // axis-aligned bounding box
     Vec3d min;
