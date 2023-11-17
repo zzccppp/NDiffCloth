@@ -3,9 +3,10 @@
 using namespace std;
 using namespace simulation;
 
-void Cloth::initialize()
-{
+bool
+Cloth::initialize() {
     // init all parameters
 
     // init constraints
+    return true;
 }

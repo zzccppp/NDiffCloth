@@ -3,6 +3,9 @@
 #define NDIFFCLOTH_TYPEDEFS_HEADER
 
 #include <Eigen/Core>
+#include <Eigen/Eigenvalues>
+#include <Eigen/Geometry>
+#include <Eigen/Sparse>
 #include <utility>
 
 typedef unsigned int Index;

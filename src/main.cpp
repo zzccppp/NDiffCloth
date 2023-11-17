@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 
-#include "initialize/Configurations.hpp"
+#include "utils/Configurations.hpp"
 
 int
 main(int argc, char **argv) {

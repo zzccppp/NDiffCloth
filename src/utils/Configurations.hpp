@@ -2,8 +2,8 @@
 #define NDIFFCLOTH_CONFIGURATIONS_HEADER
 
 #include "3rdparty/json.hpp"
-#include "defs/Constants.hpp"
-#include "defs/TypeDefs.hpp"
+#include "utils/Constant.hpp"
+#include "utils/TypeDef.hpp"
 
 namespace conf {
 struct FabricConfiguration {

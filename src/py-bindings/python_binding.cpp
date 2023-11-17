@@ -1,5 +1,5 @@
-#include "initialize/Configurations.hpp"
 #include "pybind11/pybind11.h"
+#include "utils/Configurations.hpp"
 
 namespace py = pybind11;
 
@@ -15,6 +15,7 @@ PYBIND11_MODULE(ndf, m) {
 
     py::class_<conf::SceneConfiguration>(m, "SceneConfiguration")
         .def(py::init<>())
-        .def_static("load_json_string", &conf::SceneConfiguration::load_json_string)
+        .def_static("load_json_string",
+                    &conf::SceneConfiguration::load_json_string)
         .def("dump_json_string", &conf::SceneConfiguration::dump_json_string);
 }

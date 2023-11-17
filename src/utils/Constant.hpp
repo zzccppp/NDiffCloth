@@ -8,7 +8,7 @@
 #define NDIFFCLOTH_CONSTANTS_H
 
 #include "3rdparty/json.hpp"
-#include "TypeDefs.hpp"
+#include "TypeDef.hpp"
 
 enum LossType {
     MATCHSHAPE_WITH_TRANSLATION,
