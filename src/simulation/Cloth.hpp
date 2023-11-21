@@ -10,15 +10,21 @@ using std::string;
 using std::vector;
 
 namespace simulation {
+
+/**
+ * @brief Cloth configuration.
+ *
+ */
 struct ClothConfig {
     string name;
-    string objDir;
+    string objPath;
     double kStretch;
     double kBend;
     double density;
 };
 
-/* Class to describe cloth parameters, constraints and motion.
+/**
+ * @brief Class to describe cloth parameters, constraints and motion.
  */
 class Cloth {
   public:

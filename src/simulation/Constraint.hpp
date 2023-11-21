@@ -6,6 +6,11 @@
 using namespace std;
 
 namespace simulation {
+
+/**
+ * @brief Different types of constraints.
+ *
+ */
 enum ConstraintType {
     CONSTRAINT_SPRING_STRETCH,
     CONSTRAINT_ATTACHMENT,
@@ -14,7 +19,9 @@ enum ConstraintType {
     CONSTRAINT_NUM
 };
 
-/* Class to describe different types of constraints.
+/**
+ * @brief Class to describe different types of constraints.
+ *
  */
 class Constraint {
   public:
