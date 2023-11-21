@@ -2,6 +2,8 @@
 #define NDIFFCLOTH_CLOTH_HEADER
 
 #include "simulation/Constraint.hpp"
+#include "simulation/Particle.hpp"
+#include "simulation/Triangle.hpp"
 #include "utils/TypeDef.hpp"
 #include <string>
 #include <vector>
@@ -28,14 +30,43 @@ struct ClothConfig {
  */
 class Cloth {
   public:
-    int num;      // particle number
-    VecXd p;      // positions
-    VecXd v;      // velocities
-    VecXd fext;   // external forces
-    MatXi tri;    // triangles
+    /**
+     * @brief number of particles
+     */
+    int num;
+    /**
+     * @brief positions of particles
+     */
+    vector<Vec3d> p;
+    /**
+     * @brief velocities of particles
+     */
+    vector<Vec3d> v;
+    /**
+     * @brief external forces of particles
+     */
+    VecXd fext;
+    /**
+     * @brief triangles of the cloth
+     */
+    vector<Vec3i> tri;
 
-    MatXd M;      // mass matrix
-    MatXd Minv;   // inverse mass matrix
+    /**
+     * @brief mass of particles
+     */
+    MatXd M;
+    /**
+     * @brief inverse mass of particles
+     */
+    MatXd Minv;
+
+    std::vector<Vec3d> modelPoints;
+    std::vector<Vec3i> modelTris;
+
+    std::vector<Particle> particles;
+    std::vector<std::vector<int>> particleTriangleMap;
+    std::vector<Triangle> mesh;
+    std::vector<std::vector<bool>> pointpointConnectionTable;
 
     ClothConfig config;
     vector<Constraint *> constraints;

@@ -9,8 +9,8 @@
 namespace utils {
 
 bool
-loadOBJFile(const std::string &filename, std::vector<double> &posVec,
-            std::vector<int> &triVec) {
+loadOBJFile(const std::string &filename, std::vector<Vec3d> &posVec,
+            std::vector<Vec3i> &triVec) {
     FILE *file = fopen(filename.c_str(), "rb");
     if (!file) {
         std::cerr << "file not exist:" << filename << std::endl;

@@ -6,7 +6,7 @@ using namespace simulation;
 
 // example cloth config for test
 ClothConfig cfExample = {.name = "example",
-                         .objDir = "",   // make a folder named example
+                         .objPath = "",   // make a folder named example
                          .kStretch = 1.0,
                          .kBend = 1.0,
                          .density = 1.0};

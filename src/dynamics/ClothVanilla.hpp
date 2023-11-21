@@ -22,13 +22,14 @@ class ClothVanilla : public ClothLayer {
     ~ClothVanilla() {}
 
     VecXd forward(Cloth *cloth) override {
-        VecXd p_new = cloth->p;
-        p_new += h * cloth->v;
-        p_new += h * h * cloth->Minv * cloth->fext;
-        VecXd v_new = (p_new - cloth->p) / h;
+        VecXd p_new;
+        // VecXd p_new = cloth->p;
+        // p_new += h * cloth->v;
+        // p_new += h * h * cloth->Minv * cloth->fext;
+        // VecXd v_new = (p_new - cloth->p) / h;
 
-        cloth->p = p_new;
-        cloth->v = v_new;
+        // cloth->p = p_new;
+        // cloth->v = v_new;
 
         return p_new;
     }

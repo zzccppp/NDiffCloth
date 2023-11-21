@@ -1,6 +1,8 @@
 #ifndef NDIFFCLOTH_FILE_READER_HEADER
 #define NDIFFCLOTH_FILE_READER_HEADER
 
+#include "TypeDef.hpp"
+#include <iomanip>
 #include <string>
 #include <vector>
 
@@ -13,11 +15,12 @@ namespace utils {
  * @param filename input obj file name
  * @param vertices output vertices
  * @param triangles output triangles
- * @return true
- * @return false
+ * @return true if success
+ * @return false if fail
  */
-bool loadOBJFile(const std::string &filename, std::vector<double> &vertices,
-                 std::vector<int> &triangles);
+bool loadOBJFile(const std::string &filename, std::vector<Vec3d> &vertices,
+                 std::vector<Vec3i> &triangles);
+
 }   // namespace utils
 
 #endif
