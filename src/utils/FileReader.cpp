@@ -81,5 +81,7 @@ loadOBJFile(const std::string &filename, std::vector<Vec3d> &posVec,
 
     std::printf("Finished loading obj file %s: vertex %zu triangles: %zu\n",
                 filename.c_str(), posVec.size(), triVec.size());
+
+    return true;
 }
 }   // namespace utils

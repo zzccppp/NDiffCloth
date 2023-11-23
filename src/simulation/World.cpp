@@ -4,12 +4,7 @@
 using namespace std;
 using namespace simulation;
 
-// example cloth config for test
-ClothConfig cfExample = {.name = "example",
-                         .objPath = "",   // make a folder named example
-                         .kStretch = 1.0,
-                         .kBend = 1.0,
-                         .density = 1.0};
+
 
 void
 World::loadCloth(ClothConfig cf) {

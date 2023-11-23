@@ -10,17 +10,20 @@ bool
 Cloth::initialize() {
     // init all parameters
     std::string path = this->config.objPath;
-    bool flag = utils::loadOBJFile(path, modelPoints, modelTris);
+    bool flag = utils::loadOBJFile(path, this->modelPoints, this->modelTris);
     if (!flag) {
         std::cerr << "load obj file failed" << std::endl;
         return false;
     }
-    this->num = this->p.size();
+    std::cout << this->modelPoints.size() << " vertices and "
+              << this->modelTris.size() << " triangles loaded from " << path
+              << std::endl;
+    this->num = this->modelPoints.size();
 
     // TODO rotate points here
 
-    Vec3d minDim = p[0], maxDim = p[0];
-    for (Vec3d &p : p) {
+    Vec3d minDim = modelPoints[0], maxDim = modelPoints[0];
+    for (Vec3d &p : modelPoints) {
         for (int i = 0; i < 3; i++) {
             minDim[i] = std::min(minDim[i], p[i]);
             maxDim[i] = std::max(maxDim[i], p[i]);
@@ -87,6 +90,11 @@ Cloth::initialize() {
     for (int i = 0; i < particles.size(); i++) {
         assert(particles[i].idx == i);
     }
+
+    // createAttachments(true);
+
+    // updateBackwardDefaultInfo();   // resize vectors whose length is
+    //                                // parameter-dependent
 
     // init constraints
     return true;

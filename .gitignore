@@ -9,3 +9,5 @@ python/ndf.so
 docs/_build
 docs/_doxygen
 docs/api
+
+assets
